@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/usr/lib/python2.7/dist-packages/horizon/static/horizon/lib'
+let g:netrw_dirhist_2='/usr/share/openstack-dashboard-ubuntu-theme/static/themes/ubuntu/img'
+let g:netrw_dirhist_3='/home/ubuntu/horizon/openstack_dashboard/local/enabled'
+let g:netrw_dirhist_4='/home/ubuntu/horizon/openstack_dashboard/enabled'
+let g:netrw_dirhist_5='/home/ubuntu/openstack_dashboards/openstack_dashboard_intracom/intracom/api'
+let g:netrw_dirhist_6='/home/ubuntu/openstack_dashboards/doc/source/_static'
