@@ -12,12 +12,11 @@ set expandtab
 set shiftwidth=4
 set smarttab
 
-set nowrap                                                  "disable word wrapping
+#set nowrap                                                  "disable word wrapping
 map <C-l> zH                                                "scroll half screen left
 map <C-r> zL                                                "scroll half screen right
 
-"cnoremap Sudow w sudo tee % >/dev/null                     "forgot sudo vim? U can still save it!
-cmap w!! w !sudo tee > /dev/null %
+cmap w!! w !sudo tee > /dev/null %                          "forgot sudo vim?
 
 syntax on                                                   "always highlight the syntax
 
