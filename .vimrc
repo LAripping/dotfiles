@@ -12,7 +12,7 @@ set expandtab
 set shiftwidth=4
 set smarttab
 
-#set nowrap                                                  "disable word wrapping
+"set nowrap                                                  "disable word wrapping
 map <C-l> zH                                                "scroll half screen left
 map <C-r> zL                                                "scroll half screen right
 
