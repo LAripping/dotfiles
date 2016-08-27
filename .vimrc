@@ -1,5 +1,5 @@
 set t_Co=256
-colorscheme termschool
+colorscheme Kafka
 
 set number                                                  "line numbering enabled by default
 
