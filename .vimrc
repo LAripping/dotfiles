@@ -1,5 +1,5 @@
 set t_Co=256
-colorscheme Kafka
+colorscheme termschool
 
 set number                                                  "line numbering enabled by default
 
@@ -12,11 +12,13 @@ set expandtab
 set shiftwidth=4
 set smarttab
 
-"set nowrap                                                  "disable word wrapping
+set textwidth=72
+set nowrap                                                  "disable word wrapping
 map <C-l> zH                                                "scroll half screen left
 map <C-r> zL                                                "scroll half screen right
 
-cmap w!! w !sudo tee > /dev/null %                          "forgot sudo vim?
+"cnoremap Sudow w sudo tee % >/dev/null                     "forgot sudo vim? U can still save it!
+cmap w!! w !sudo tee > /dev/null %
 
 syntax on                                                   "always highlight the syntax
 
@@ -32,6 +34,9 @@ set noruler                                                 "disable ruler to ad
 set laststatus=2
 
 set hls                                                     "highlight all search matches
+
+set splitbelow                                              "default split positions
+set splitright
 
 set statusline=
 "set statusline+=%7*\[%n]                                   "buffernr
