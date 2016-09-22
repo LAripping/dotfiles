@@ -12,6 +12,11 @@ set expandtab
 set shiftwidth=4
 set smarttab
 
+set mouse=nic                                               "mouse in Normal,Insert,Command mode.
+                                                            "(press SHIFT to keep old functionality)
+
+set ttyfast                                                 "faster scrolling/buffering
+
 set textwidth=72
 set nowrap                                                  "disable word wrapping
 map <C-l> zH                                                "scroll half screen left
