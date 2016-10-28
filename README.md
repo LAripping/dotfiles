@@ -26,37 +26,34 @@ a colleague's `/dotfiles` repo.
 
 * master
 
-1. **bashrc**: with colors and a set of aliases.
+    1. **bashrc**: with colors and a set of aliases.
 
-2. **Git**: scripts git-completion and git-prompt sourced from bashrc
+    2. **Git**: scripts git-completion and git-prompt sourced from bashrc
 
-3. **Vim**: With my own .vimrc, some colorschemes, no plugin manager and
-   the following plugins:
+    3. **Vim**: With my own .vimrc, some colorschemes, no plugin manager and
+       the following plugins:
 
-a. `trailing-whitespace.vim`
-b. Pyflakes syntax checker (`/ftplugin/python`)
-c. `after` commands for specific filetypes
+        a. `trailing-whitespace.vim`
+        b. Pyflakes syntax checker (`/ftplugin/python`)
+        c. `after` commands for specific filetypes
 
 * rom-fork
 
-1. **bashrc**: with colors and a set of aliases. These must only be
-   *additions* to the system-default bashrc provided, not a *complete
-   override*.
+    1. **bashrc**: with colors and a set of aliases. These must only be
+        *additions* to the system-default bashrc provided, not a *complete
+        override*.
 
-2. **Git**: scripts git-completion and git-prompt sourced from. Git
-   commands pre-ran to setup aliases, configuration.
+    2. **Git**: scripts git-completion and git-prompt sourced from. Git
+       commands pre-ran to setup aliases, configuration.
 
-3. **Vim**: With my own .vimrc, some colorschemes, *Vundle* plugin
-   manager and the following plugins pre-installed:
+    3. **Vim**: With my own .vimrc, some colorschemes, *Vundle* plugin
+        manager and the following plugins pre-installed:
 
-a. `trailing-whitespace.vim`
-- [ ] Done
-b. Syntastic syntax checker
-- [ ] Done
-c. `after` commands for specific filetypes
-- [ ] Done
-d. Pylint linter
-- [ ] Done
+            - [ ] a. `trailing-whitespace.vim`
+            - [ ] b. Syntastic syntax checker
+            - [ ] c. `after` commands for specific filetypes
+            - [ ] d.  Pylint linter
+
 
 ## Instructions
 
