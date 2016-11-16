@@ -45,7 +45,7 @@ a colleague's `/dotfiles` repo.
 
     2. **Git**: scripts git-completion and git-prompt sourced from. Git
        commands pre-ran to setup aliases (unstage,diff color), configuration
-       (name,email,editor,simple mode).
+       (name,email,editor,simple mode,color).
 
     3. **Vim**: With my own .vimrc, some colorschemes, *Vundle* plugin
         manager and the following plugins pre-installed:
