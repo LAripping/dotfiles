@@ -43,9 +43,18 @@ a colleague's `/dotfiles` repo.
         *additions* to the system-default bashrc provided, not a *complete
         override*.
 
-    2. **Git**: scripts git-completion and git-prompt sourced from. Git
-       commands pre-ran to setup aliases (unstage, diff w. color, lstree),
-       configuration (name,email,editor,simple mode,color).
+    2. **Git**:
+
+            - [ ] scripts git-completion and git-prompt sourced from.
+            - [ ] Git commands pre-ran to **globally** set-up:
+
+                * aliases (unstage, diff w. color, lstree)
+                * core.name, core.email
+                * core.editor vim
+                * simple mode
+                * ui.color "yes"
+                * excludesFile (and create the file to ingore vim's
+                  leftovers .swo/.swp)
 
     3. **Vim**: With my own .vimrc, some colorschemes, *Vundle* plugin
         manager and the following plugins pre-installed:
