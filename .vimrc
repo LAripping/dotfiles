@@ -17,6 +17,9 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-syntastic/syntastic'
+
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -39,6 +42,14 @@ filetype plugin indent on    " required
 
 
 
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_c_checkers = ['GCC', 'make', 'cppcheck']
+let g:syntastic_sh_checkers = ['bashate', 'sh', 'shellcheck']
+let g:syntastic_java_checkers = ['javac']
+let g:syntastic_html_checkers = ['w3', 'validator', 'eslint']
+let g:syntastic_markdown_checkers = ['mdl']
+let g:syntastic_asm_checkers = ['gcc']
 
 
 
