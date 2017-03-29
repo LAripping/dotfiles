@@ -41,11 +41,14 @@ a colleague's `/dotfiles` repo.
 
     1. **bashrc**: with colors and a set of aliases. These must only be
         *additions* to the system-default bashrc provided, not a *complete
-        override*.
+        override*. So that a single `source .bashrc_<flav>_additions`
+        must be added in the default .bashrc
+            - [x] Done
 
     2. **Git**: scripts git-completion and git-prompt sourced from. Git
        commands pre-ran to setup aliases (unstage, diff w. color, lstree),
        configuration (name,email,editor,simple mode,color).
+            - [x] Done
 
     3. **Vim**: With my own .vimrc, some colorschemes, *Vundle* plugin
         manager and the following plugins pre-installed:
@@ -69,7 +72,7 @@ $ cp -r .vim* ~/
 * rom-fork
 
 ```$ make all```
-- [ ] Done
+- [x] Done
 
 
 
