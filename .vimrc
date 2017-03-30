@@ -44,16 +44,14 @@ set splitbelow                                              "default split posit
 set splitright
 
 set statusline=
-"set statusline+=%7*\[%n]                                   "buffernr
 set statusline+=%1*\ %<%F\                                  "File+path
+set statusline+=%1*\ %m%r%w\                            "Modified? Readonly?
 set statusline+=%2*\ %y\                                    "FileType
-"set statusline+=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}       "Encoding
-"set statusline+=%3*\ %{(&bomb?\",BOM\":\"\")}\             "Encoding2
-"set statusline+=%4*\ %{&ff}\                               "FileFormat (dos/unix..)
-set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\    "Spellanguage & Highlight on?
-set statusline+=%8*\ %=\ row:%l/%L\                         "Rownumber/total (%)
-set statusline+=%9*\ col:%03c\                              "Colnr
-set statusline+=%0*\ \ %m%r%w\ %P\ \                        "Modified? Readonly? Top/bot.
+set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\    "Spellanguage & Highilight on?
+"syntastic part here, blue color (%8)
+set statusline+=%8*\ %=\                                   "temp Placeholder
+set statusline+=%9*\ row:%l/%L\ %P\                    "Rownumber/total (%)
+set statusline+=%0*\ col:%03c\                              "Colnr
 
 function! HighlightSearch()                                 "function used above
     if &hls
