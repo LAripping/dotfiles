@@ -44,14 +44,18 @@ filetype plugin indent on    " required
 
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_c_checkers = ['GCC', 'make', 'cppcheck']
+let g:syntastic_c_checkers = ['gcc', 'make', 'cppcheck']
 let g:syntastic_sh_checkers = ['bashate', 'sh', 'shellcheck']
 let g:syntastic_java_checkers = ['javac']
 let g:syntastic_html_checkers = ['w3', 'validator', 'eslint']
-let g:syntastic_markdown_checkers = ['mdl']
+"let g:syntastic_viml_checkers = ['vimlint']
 let g:syntastic_asm_checkers = ['gcc']
 
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 
@@ -102,10 +106,11 @@ set splitright
 
 set statusline=
 set statusline+=%1*\ %<%F\                                  "File+path
-set statusline+=%1*\ %m%r%w\                            "Modified? Readonly?
+set statusline+=%1*\ %m%r%w\                                "Modified? Readonly?
 set statusline+=%2*\ %y\                                    "FileType
 set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\    "Spellanguage & Highilight on?
-"syntastic part here, blue color (%8)
+set statusline+=%8*\ %#warningmsg#\
+set statusline+=%8*\ %{SyntasticStatuslineFlag()}\
 set statusline+=%8*\ %=\                                   "temp Placeholder
 set statusline+=%9*\ row:%l/%L\ %P\                    "Rownumber/total (%)
 set statusline+=%0*\ col:%03c\                              "Colnr
