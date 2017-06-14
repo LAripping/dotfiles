@@ -18,7 +18,7 @@ Plugin 'gmarik/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-syntastic/syntastic'
-
+Plugin 'vim-scripts/AnsiEsc.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -45,6 +45,8 @@ filetype plugin indent on    " required
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_c_checkers = ['gcc', 'make', 'cppcheck']
+let g:syntastic_cpp_include_dirs = ['/usr/include','/usr/local/include']
+let g:syntastic_cpp_check_header = 1
 let g:syntastic_sh_checkers = ['bashate', 'sh', 'shellcheck']
 let g:syntastic_java_checkers = ['javac']
 let g:syntastic_html_checkers = ['w3', 'validator', 'eslint']
