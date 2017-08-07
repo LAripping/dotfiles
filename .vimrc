@@ -19,7 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-scripts/AnsiEsc.vim'
-
+Plugin 'scrooloose/nerdtree.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -62,7 +62,7 @@ let g:syntastic_check_on_wq = 0
 
 
 set t_Co=256
-colorscheme Kafka
+colorscheme termschool
 
 set number                                                  "line numbering enabled by default
 
@@ -138,5 +138,30 @@ hi User0 ctermfg=yellow     ctermbg=DarkGray
 
 hi Comment ctermfg=yellow
 
-hi Normal ctermbg=NONE
+"hi Normal ctermbg=NONE                                     "transparent BG
 
+
+autocmd vimenter * NERDTree                                 "auto-launch NERDTree
+autocmd VimEnter * wincmd p                                 " ...and keep cursor on the editing side!
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+                                                            "auto-close vim if only NERDTree is open
+
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')                                                            
