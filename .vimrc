@@ -62,7 +62,7 @@ let g:syntastic_check_on_wq = 0
 
 
 set t_Co=256
-colorscheme termschool
+colorscheme Kafka
 
 set number                                                  "line numbering enabled by default
 
@@ -110,11 +110,11 @@ set statusline=
 set statusline+=%1*\ %<%F\                                  "File+path
 set statusline+=%1*\ %m%r%w\                                "Modified? Readonly?
 set statusline+=%2*\ %y\                                    "FileType
-set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\    "Spellanguage & Highilight on?
-set statusline+=%8*\ %#warningmsg#\
-set statusline+=%8*\ %{SyntasticStatuslineFlag()}\
-set statusline+=%8*\ %=\                                   "temp Placeholder
-set statusline+=%9*\ row:%l/%L\ %P\                    "Rownumber/total (%)
+set statusline+=%5*\ %{&spelllang}\                         "Spellanguage & Highilight on?
+"set statusline+=%8*\ %#warningmsg#\                        "DO NOT WORK
+"set statusline+=%8*\ %{SyntasticStatuslineFlag()}\         "DO NOT WORK
+set statusline+=%8*\ %=\                                    "temp Placeholder
+set statusline+=%9*\ row:%l/%L\ %P\                         "Rownumber/total (%)
 set statusline+=%0*\ col:%03c\                              "Colnr
 
 function! HighlightSearch()                                 "function used above
@@ -137,4 +137,6 @@ hi User9 ctermfg=white      ctermbg=DarkMagenta
 hi User0 ctermfg=yellow     ctermbg=DarkGray
 
 hi Comment ctermfg=yellow
+
+hi Normal ctermbg=NONE
 
