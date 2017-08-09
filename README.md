@@ -43,20 +43,18 @@ a colleague's `/dotfiles` repo.
         *additions* to the system-default bashrc provided, not a *complete
         override*. So that a single `source .bashrc_<flav>_additions`
         must be added in the default .bashrc
-            - [x] Done
+
+        - [x] Done
 
     2. **Git**: scripts git-completion and git-prompt sourced from. Git
        commands pre-ran to setup aliases (unstage, diff w. color, lstree),
        configuration (name,email,editor,simple mode,color).
-            - [x] Done
+       - [x] Done
 
     3. **Vim**: With my own .vimrc, some colorschemes, *Vundle* plugin
-        manager and the following plugins pre-installed:
+        manager.
 
-            - [ ] a. `trailing-whitespace.vim`
-            - [ ] b. Syntastic syntax checker
-            - [ ] c. `after` commands for specific filetypes
-            - [ ] d.  Pylint linter
+        ​
 
 
 ## Instructions
