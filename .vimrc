@@ -1,3 +1,66 @@
+"VUNDLE requirements start here
+
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-scripts/AnsiEsc.vim'
+Plugin 'scrooloose/nerdtree.git'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install (update) plugins
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+"VUNDLE requirements end here
+
+
+
+
+
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_c_checkers = ['gcc', 'make', 'cppcheck']
+let g:syntastic_cpp_include_dirs = ['/usr/include','/usr/local/include']
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_sh_checkers = ['bashate', 'sh', 'shellcheck']
+let g:syntastic_java_checkers = ['javac']
+let g:syntastic_html_checkers = ['w3', 'validator', 'eslint']
+"let g:syntastic_viml_checkers = ['vimlint']
+let g:syntastic_asm_checkers = ['gcc']
+
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+
 set t_Co=256
 colorscheme termschool
 
@@ -44,16 +107,15 @@ set splitbelow                                              "default split posit
 set splitright
 
 set statusline=
-"set statusline+=%7*\[%n]                                   "buffernr
 set statusline+=%1*\ %<%F\                                  "File+path
+set statusline+=%1*\ %m%r%w\                                "Modified? Readonly?
 set statusline+=%2*\ %y\                                    "FileType
-"set statusline+=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}       "Encoding
-"set statusline+=%3*\ %{(&bomb?\",BOM\":\"\")}\             "Encoding2
-"set statusline+=%4*\ %{&ff}\                               "FileFormat (dos/unix..)
-set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\    "Spellanguage & Highlight on?
-set statusline+=%8*\ %=\ row:%l/%L\                         "Rownumber/total (%)
-set statusline+=%9*\ col:%03c\                              "Colnr
-set statusline+=%0*\ \ %m%r%w\ %P\ \                        "Modified? Readonly? Top/bot.
+set statusline+=%5*\ %{&spelllang}\                         "Spellanguage & Highilight on?
+"set statusline+=%8*\ %#warningmsg#\                        "DO NOT WORK
+"set statusline+=%8*\ %{SyntasticStatuslineFlag()}\         "DO NOT WORK
+set statusline+=%8*\ %=\                                    "temp Placeholder
+set statusline+=%9*\ row:%l/%L\ %P\                         "Rownumber/total (%)
+set statusline+=%0*\ col:%03c\                              "Colnr
 
 function! HighlightSearch()                                 "function used above
     if &hls
@@ -76,3 +138,30 @@ hi User0 ctermfg=yellow     ctermbg=DarkGray
 
 hi Comment ctermfg=yellow
 
+"hi Normal ctermbg=NONE                                     "transparent BG
+
+
+autocmd vimenter * NERDTree                                 "auto-launch NERDTree
+autocmd VimEnter * wincmd p                                 " ...and keep cursor on the editing side!
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+                                                            "auto-close vim if only NERDTree is open
+
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')                                                            
