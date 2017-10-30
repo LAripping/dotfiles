@@ -41,7 +41,7 @@ filetype plugin indent on    " required
 
 
 
-
+let g:syntastic_javascript_checkers = ['standard']
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_c_checkers = ['gcc', 'make', 'cppcheck']

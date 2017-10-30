@@ -17,3 +17,4 @@ bash: git
 vim:
 	cp -r .vim* ~/
 	sudo apt install pylint 
+	vim +PluginInstall +qall
